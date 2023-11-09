@@ -2,6 +2,7 @@ const catchError = require('../utils/catchError');
 const ToDo = require('../models/ToDo');
 
 const getAll = catchError(async(req, res) => {
+    const user = req.user;
     const results = await ToDo.findAll();
     return res.json(results);
 });
